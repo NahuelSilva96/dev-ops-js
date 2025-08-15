@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Libros</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <h1>practico evaluativo Js:🧠 Silva Nahuel </h1>
+  <h2>📚 Gestor de Libros</h2>
+
+  <form onsubmit="agregarLibro(); return false">
+    <input type="text" id="titulo" placeholder="Título del libro" required>
+    <input type="text" id="autor" placeholder="Autor del libro" required>
+    <input type="number" id="anio" placeholder="Año de publicación" required>
+    <select id="genero" required>
+      <option value="">Seleccionar género</option>
+      <option value="Ficción">Ficción</option>
+      <option value="Terror">Terror</option>
+      <option value="Drama">Drama</option>
+      <option value="Poesía">Poesía</option>
+      <option value="Historia">Historia</option>
+    </select>
+    <label>
+      <input type="checkbox" id="leido"> ¿Leído?
+    </label>
+    <button type="submit">Agregar libro</button>
+  </form>
+
+  <br>
+  <h4>🔍 Buscar por título</h4>
+  <input type="text" id="busqueda" placeholder="Buscar título..." oninput="filtrarLibrosPorTitulo()">
+
+  <h4>🎯 Filtrar por género</h4>
+  <select id="filtroGenero" onchange="filtrarPorGenero()">
+    <option value="todos">Todos</option>
+  </select>
+
+  <h4>📚 Filtrar por estado de lectura</h4>
+  <select id="filtroLeido" onchange="filtrarPorEstadoLectura()">
+    <option value="todos">Todos</option>
+    <option value="leidos">Leídos</option>
+    <option value="noLeidos">No leídos</option>
+  </select>
+
+  <br><br>
+  <button onclick="ordenarPorAnio()">📅 Ordenar por año</button>
+
+  <table border="1" id="tablaLibros">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Año</th>
+        <th>Género</th>
+        <th>¿Leído?</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h3>📊 Resumen de la biblioteca</h3>
+  <div id="resumenLibros"></div>
+
+  <script src="./js/libros.js"></script>
+</body>
+</html>
