@@ -1,0 +1,30 @@
+{
+  "name": "dev-ops",
+  "version": "1.0.0",
+  "description": "Proyecto de gestión de libros con pruebas automatizadas",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NahuelSilva96/dev-ops-js.git"
+  },
+  "keywords": [
+    "libros",
+    "jest",
+    "testing",
+    "node"
+  ],
+  "author": "Nahuel Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NahuelSilva96/dev-ops-js/issues"
+  },
+  "homepage": "https://github.com/NahuelSilva96/dev-ops-js#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
