@@ -20,4 +20,5 @@ jobs:
 
     - name: Desplegar vía SSH
       run: |
-        ssh -o StrictHostKeyChecking=no alumno@137.184.127.11 'cd lemp-sites/nahuel_silva/dev-ops-js && git pull && npm install && npm run build'
+        ssh -i ~/.ssh/id_ed25519_server -o StrictHostKeyChecking=no alumno@137.184.127.11 'cd lemp-sites/nahuel_silva/dev-ops-js && git pull && npm install && npm run build'
+
