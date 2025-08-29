@@ -1,4 +1,6 @@
-
+    /**
+     * @jest-environment jsdom
+     */
     const { agregarLibro } = require('../src/libros.js')
 
     beforeEach(() => {
