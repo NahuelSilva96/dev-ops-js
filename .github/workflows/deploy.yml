@@ -29,4 +29,4 @@ jobs:
       - name: Run Deploy
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          cd ~/lemp-sites/nnahuel_silva/dev-ops-js && git pull origin main"
+          cd ~/lemp-sites/nahuel_silva/dev-ops-js && git pull origin main"
