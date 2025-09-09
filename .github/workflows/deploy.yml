@@ -1,4 +1,4 @@
-name: CD - Deploy react con git pull
+name: CD - Deploy React con git pull
 
 on:
   push:
@@ -8,9 +8,6 @@ jobs:
   deploy:
     name: Deploy to Server
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: gestorLibros
 
     steps:
       - name: Setup SSH
@@ -26,14 +23,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Run Deploy
+      - name: Ejecutar despliegue en el servidor
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-            cd ~/lemp-sites/nahuel_silva/dev-ops-js && git pull origin main"
-
-      - name: Instalar dependencias y build
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          npm install
-          npm run build
-          cd ~/lemp-sites/nahuel_silva/dev-ops-js && git pull origin main"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+            cd ~/lemp-sites/nahuel_silva/dev-ops-js
+            git pull origin main
+            npm install
+            npm run build
+          EOF
