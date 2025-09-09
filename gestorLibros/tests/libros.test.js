@@ -25,7 +25,7 @@
     window.indiceEditar = null
     window.ordenAscendente = false
 
-    // Simula funciones auxiliares
+    // Simula funciones aux
     global.renderizarLibros = jest.fn()
     global.mostrarResumen = jest.fn()
     global.actualizarSelectGenero = jest.fn()
