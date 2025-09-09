@@ -28,6 +28,4 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
             cd ~/lemp-sites/nahuel_silva/dev-ops-js
             git pull origin main
-            npm install
-            npm run build
           EOF
