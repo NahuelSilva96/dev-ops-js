@@ -1,4 +1,4 @@
-name: CD - Deploy React con git pull
+name: CD - Deploy a production con pull
 
 on:
   push:
@@ -26,6 +26,6 @@ jobs:
       - name: Ejecutar despliegue en el servidor
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-            cd ~/lemp-sites/nahuel_silva/dev-ops-js
+            cd ~/lemp-sites/nahuel_silva/production/dev-ops-js
             git pull origin main
           EOF
