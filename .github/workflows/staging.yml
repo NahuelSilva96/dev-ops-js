@@ -1,4 +1,4 @@
-name: CD - Deploy a production con pull
+name: CD - Deploy a staging con pull
 
 on:
   push:
